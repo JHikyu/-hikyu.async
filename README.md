@@ -50,3 +50,12 @@ await sleep(1000)
 
 console.log("I'm done sleeping 👋");
 ```
+
+### Requests
+
+#### Get
+> Only Https at the moment.
+```js
+//
+get('api.example.com/todo/1'); // > <pending> json output
+```
