@@ -6,7 +6,7 @@ Useful package 📂 for some async stuff like sleep 💤
 
 ![](https://img.shields.io/bundlephobia/min/@hikyu/async?style=flat-square)
 ![](https://img.shields.io/npm/dw/@hikyu/async?style=flat-square)
-![](https://img.shields.io/github/last-commit/jhikyu/-hikyu-async?style=flat-square)
+![](https://img.shields.io/github/last-commit/jhikyu/-hikyu.async?style=flat-square)
 
 ## Install
 
