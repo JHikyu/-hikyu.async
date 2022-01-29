@@ -34,6 +34,8 @@ sleep(1, 10);
 ## Functions
 - [General](#general)
     - [Sleep 💤](#sleep)
+- [Requests](#requests)
+    - [Get 📩](#get)
 
 ### General
 
