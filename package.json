@@ -1,0 +1,17 @@
+{
+    "name": "@hikyu/async",
+    "version": "1.0.2",
+    "description": "",
+    "main": "index.min",
+    "scripts": {
+        "upload": "uglifyjs index.js -c -m -o index.min.js && npm version patch --no-git-tag-version && npm publish --access=public",
+        "test": "node test.js"
+    },
+    "keywords": [],
+    "author": "hikyu",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JHikyu/-hikyu-async"
+    }
+}
