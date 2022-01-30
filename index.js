@@ -50,9 +50,6 @@ async function request(options) {
         request.end();
     });
 }
-(async () => {
-    console.log(await post('https://gorest.co.in/public/v1/users/100/posts'));
-})();
 
 
 
