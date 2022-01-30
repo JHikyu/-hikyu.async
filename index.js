@@ -19,6 +19,28 @@ async function get(url) {
             path: `/${url[1]}`,
         };
 
+        request(options).then(async data => resolve(data));
+    });
+}
+async function post(url) {
+    return new Promise((resolve, reject) => {
+        if(url.includes('http://')) reject('Please use https://');
+
+        url = url.replace('https://', '').split(/\/(.+)/);
+
+        const options = {
+            hostname: url[0],
+            port: 443,
+            method: 'POST',
+            path: `/${url[1]}`,
+        };
+
+
+        request(options).then(data => resolve(data));
+    });
+}
+async function request(options) {
+    return new Promise((resolve, reject) => {
         let request = https.request(options, res => {
             let data = '';
             res.on('data', chunk => data += chunk);
@@ -28,7 +50,9 @@ async function get(url) {
         request.end();
     });
 }
-
+(async () => {
+    console.log(await post('https://gorest.co.in/public/v1/users/100/posts'));
+})();
 
 
 

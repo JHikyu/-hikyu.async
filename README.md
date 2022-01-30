@@ -28,7 +28,7 @@ wait();
 
 // Deconstructed require
 const { sleep, .. } = require('@hikyu/async');
-sleep(1, 10);
+sleep();
 ```
 
 ## Functions
@@ -36,6 +36,7 @@ sleep(1, 10);
     - [Sleep 💤](#sleep)
 - [Requests](#requests)
     - [Get 📩](#get)
+    - [Post 📮](#post)
 
 ### General
 
@@ -56,8 +57,15 @@ console.log("I'm done sleeping 👋");
 ### Requests
 
 #### Get
-> Only Https at the moment.
+
 ```js
-//
+// Only Https at the moment.
 get('api.example.com/todo/1'); // > <pending> json output
+```
+
+#### Post
+
+```js
+// Only Https at the moment.
+post('api.example.com/todo/create'); // > <pending> json output
 ```
