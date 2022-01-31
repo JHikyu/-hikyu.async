@@ -39,6 +39,23 @@ async function post(url) {
         request(options).then(data => resolve(data));
     });
 }
+
+async function onChange(url, method, callback, interval = 10000) {
+    let currentResponse = (method === 'GET') ? await get(url) : await post(url);
+
+    setInterval(async () => {
+        let response = null;
+
+        response = (method === 'GET') ? await get(url) : await post(url);
+        
+        if(response != currentResponse) {
+            currentResponse = response;
+            callback(response);
+        }
+
+    }, interval);
+}
+
 async function request(options) {
     return new Promise((resolve, reject) => {
         let request = https.request(options, res => {
@@ -54,5 +71,8 @@ async function request(options) {
 
 
 module.exports = {
-    sleep
+    sleep,
+    get,
+    post,
+    onChange
 };

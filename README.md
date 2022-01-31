@@ -37,6 +37,7 @@ sleep();
 - [Requests](#requests)
     - [Get 📩](#get)
     - [Post 📮](#post)
+    - [onChange ↔](#onchange)
 
 ### General
 
@@ -60,12 +61,23 @@ console.log("I'm done sleeping 👋");
 
 ```js
 // Only Https at the moment.
-get('api.example.com/todo/1'); // > <pending> json output
+await get('api.example.com/todo/1'); // > json output
 ```
 
 #### Post
 
 ```js
 // Only Https at the moment.
-post('api.example.com/todo/create'); // > <pending> json output
+await post('api.example.com/todo/create'); // > json output
+```
+
+#### onChange
+
+```js
+// console.logs every change happened on the request
+onChange('api.example.com/activity/new', 'GET', console.log, 5000);
+
+// Interval time defaults to 10000
+// onChange('api.example.com/activity/new', 'POST', yourFunction);
+
 ```
